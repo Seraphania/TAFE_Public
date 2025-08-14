@@ -18,7 +18,7 @@
 
 ## Overview
 This session covers SQL Data Types.  
-**Database and table creation are covered in session 3 also, so the notes are contained in the [week 3 notes](../week_3-database-queries/notes.md).**
+**Database and table creation are covered in session 3 also, so the notes are contained in the [week 3 notes](./../week_3-database-queries/notes.md).**
 
 ## Data Types
 There are many data types in SQL, broadly speaking these are:
@@ -136,8 +136,8 @@ ___
 [Class Notes - Data Types in SQL](resources/Class-Notes-Data-types-in-SQL.pdf)
 
 ## Activities
-~~[In-class activity: Portfolio Exercise - Creating Tables](../week_3-database-queries/activities/portfolio-excercise/Portfolio-Exercise-Creating-Tables.md)~~  In Blackboard under Session 2, but fits better with week 3.  
+~~[In-class activity: Portfolio Exercise - Creating Tables](./../week_3-database-queries/activities/portfolio-excercise/Portfolio-Exercise-Creating-Tables.md)~~  In Blackboard under Session 2, but fits better with week 3.  
 Do second assessment:   
 https://blackboard.northmetrotafe.wa.edu.au/ultra/courses/_13866_1/cl/outline  
 
-[Completed Assessment](../assessments/test-2-ICTPRG431-KBA-2-SQL-Datatypes.md)
+[Completed Assessment](./../assessments/test-2-ICTPRG431-KBA-2-SQL-Datatypes.md)

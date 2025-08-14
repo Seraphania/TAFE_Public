@@ -94,7 +94,7 @@ Tables contain one or more fields, these fields help identify the data context.
 Examples: *Name, Age, Weight*.  
 
 #### Data Type
-The type of data ina field.  
+The type of data in a field.  
 Examples: *String, Int, Float, Date, Time*.
 
 #### Record
@@ -159,4 +159,4 @@ ___
 Do first assessment:   
 https://blackboard.northmetrotafe.wa.edu.au/ultra/courses/_13866_1/cl/outline  
 
-[Completed Assessment](../assessments/test-1-ICTPRG431-KBA-1-Terminology.md)
+[Completed Assessment](./../assessments/test-1-ICTPRG431-KBA-1-Terminology.md)

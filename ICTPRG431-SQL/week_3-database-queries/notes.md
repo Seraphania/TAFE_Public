@@ -4,13 +4,14 @@
   - [Overview](#overview)
   - [Notes](#notes)
     - [Database Creation](#database-creation)
-    - [Creating Tables](#creating-tables)
+    - [Table Creation](#table-creation)
     - [Table Population](#table-population)
     - [Deleting Tables](#deleting-tables)
     - [Updating Tables](#updating-tables)
-    - [BREAD \& CRUD](#bread--crud)
-    - [Browsing a Table](#browsing-a-table)
-    - [Browsing with filters](#browsing-with-filters)
+  - [Basic Select Queries](#basic-select-queries)
+    - [Comparison Operators](#comparison-operators)
+    - [Mathematical Functions](#mathematical-functions)
+    - [Ordering Results](#ordering-results)
     - [Grouping](#grouping)
     - [Limiting Results](#limiting-results)
   - [Resources](#resources)
@@ -39,11 +40,23 @@ Tables must belong to a database, so creating a database before creating tables 
 The basic syntax to create a new database is:
 ```sql
 CREATE DATABASE database_name;
-USE database_name; -- This is a prerequisite for going on to create tables.
+USE database_name; -- This is auto-connects to DB in MySQL, does not work in PG!
 ```
-*see [syntax](../week_1-database-basics/notes.md#syntax-rules) for style*  
+`USE database_name` does not work in PostgreSQL/DBeaver, connection must be done seperately after database creation. Either run the create seperately -> connect manually to the new DB -> create tables etc. Or use psql:
+```sql
+-- my_script.sql
+CREATE DATABASE e_shop;
+\c e_shop
+CREATE TABLE customers (...);
+INSERT INTO customers (...);
+```
 
-### Creating Tables
+```bash
+psql -U postgres -f my_script.sql
+```
+*see [syntax](./../week_1-database-basics/notes.md#syntax-rules) for style*  
+
+### Table Creation
 Tables are created with the syntax:
 ```sql
 USE database_name;
@@ -52,7 +65,6 @@ CREATE TABLE table_name (
   -- ... repeat as needed for each field
 );
 ```
-
 
 Tables should only contain data related to a single subject for example customers, students, lecturers etc, all tables must have a primary key. Below is an example definition of a table:
 **Table: Customers**
@@ -77,36 +89,111 @@ CREATE TABLE customers (
   gender CHAR (1)
 );
 ```
+*AUTO_INCREMENT is a useful field property; if a NULL value is inserted into an AUTO_INCREMENT field the next record number in sequence will be used.*
 
 ### Table Population
 Tables can be populated with the syntax:
 ```sql
 INSERT INTO customers 
-  (customer_id, given_name, family_name, address, age, gender) -- this part is optional
+  (customer_id, given_name, family_name, address, age, gender) -- this part is optional in MySQL, not in PostgreSQL
   VALUES
     (0011, 'Jaques', "d'Carre", '123 Some St, Waterdale, 1235', 43, 'M');
     -- 0011 will be interpreted as binary by PSQL; use quotes or 11
     -- use 'd''Carre' to escape '
 ```
-___
-___
-___
-Up to slide 13 (Exercise 1 creating tables)
 
 ### Deleting Tables
+Deleting tables is performed with the syntax `DROP TABLE table_name`.  
+***Dropping tables cannot be undone!***
 
 ### Updating Tables
+Field names can be added or removed after creation with the basic syntax:
+```sql
+ALTER TABLE table_name ADD COLUMN -- (or DROP)
+field_name data_type(); -- data type is not required if dropping a field
+```
 
-### BREAD & CRUD
+`ALTER TABLE` can also be used to update values in a table wit `SET`;
+```sql
+ALTER TABLE customers 
+  ADD COLUMN salary FLOAT(10, 2); -- Adds a new column called salary
 
-### Browsing a Table
+UPDATE customers 
+  SET salary=5,000; -- Make the salary for all customers 5,000
 
-### Browsing with filters
+UPDATE customers 
+  SET salary=6,000 WHERE age > 35; -- Change salary to 6,000 for customers over the age of 35
+```
+
+## Basic Select Queries
+`SELECT` is the basic key word for querying information in a database, the basic syntax for searching for information is `SELECT * FROM table_name;`, this will retrieve all data from all fields in the specified table. It is inadvisable to search using `*` in large datasets.  
+
+To retrieve all data from specified fields from a table the following syntax is used:
+```sql
+SELECT
+  field_name1, field_name2, -- ...
+FROM table_name;
+```
+Results from multiple fields can be combined using the `CONCAT` function, for example:
+```sql
+SELECT CONCAT (first_name, ' ', last_name) AS name
+FROM customers;
+```
+
+### Comparison Operators
+Select queries can be refined using conditions,  `>` `<` `>=` and `<=` are  the same as in Python or C#, however `=` is used to test equality (not "=="), and  `<>` (not !=) is used to test inequality.
+
+the `LIKE` operator is used in `WHERE` clauses to search for specified patterns. It is often combined with:
+* `%` - Wildcard representing any number of characters
+* `_` - Wildcard representing only a single character.
+
+The boolean operators `AND`, `OR`, `NOT` and `IN` (multiple `OR`'s)can be included with comparison operators. 
+
+### Mathematical Functions
+Mathematical and statistical operations such as `SUM` `AVG` (average) and `MIN`/`MAX` (minimum/maximum) can be performed on numerical results, for example:
+```sql
+SELECT SUM(age)
+  FROM customers;
+```
+When using multiple fields, `GROUP BY` must be used for these aggregate functions.
+
+### Ordering Results
+Retrieved results can be ordered using the `ORDER BY` clarifier, for example:
+```sql
+SELECT * FROM customers
+ORDER BY family_name DESC; --descending order
+```
+Ordering is done
+* Alphanumerically for strings
+* Numerically for numbers
+* By date for data/time
+The default order is ascending, but this can be reversed using the `DESC` switch.
+
+The `DISTINCT` keyword will return only unique results from a query.
 
 ### Grouping
+Grouping is subtly different from ordering, it is used for
+* Gathering related data
+* Counting Results
+* Totalling values
+* Basic statistics
+An example is if a table "locations" contained location data that included `ID`, `location_name`, `population` and `country_code` a query could be created to determine how many countries shared the same country code:
+```sql
+SELECT country_code, COUNT(location_name)
+  FROM locations
+    GROUP BY country_code
+      ORDER BY country_code;
+```
+
 
 ### Limiting Results
-
+To select only a certain number of results from a query, `LIMIT` is used:
+```sql
+SELECT * FROM customers
+  WHERE age > 25
+  LIMIT 5;
+```
+This will return only the first 5 matching results. Ranges can also be included, such as `LIMIT 4, 2`, this will start at the 4th matching entry and return the next 2 matches.
 ___
 ## Resources
 [Lecture Slides](./resources/03-SQL-Queries.pptx)  
