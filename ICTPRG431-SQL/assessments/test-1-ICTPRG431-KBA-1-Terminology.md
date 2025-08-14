@@ -1,9 +1,9 @@
-# Test 2 Diagnostic Tools Practical: Control Panel
+# Test 1: Terminology
 
 [link](https://blackboard.northmetrotafe.wa.edu.au/ultra/courses/_13866_1/cl/outline)
 
 Contents:
-- [Test 2 Diagnostic Tools Practical: Control Panel](#test-2-diagnostic-tools-practical-control-panel)
+- [Test 1: Terminology](#test-1-terminology)
   - [Instructions](#instructions)
     - [Question 1](#question-1)
     - [Question 2](#question-2)
