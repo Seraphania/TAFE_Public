@@ -12,6 +12,34 @@ namespace TAFE_C__classActivities
         { // Put things here for testing!
 
 
+
+            ////Try/Catch
+            //Console.Write("Provide a number: ");
+            //string input = Console.ReadLine();
+            //try
+            //{
+            //    int num = Convert.ToInt32(input);
+            //}
+            //catch
+            //{
+            //    Console.WriteLine("Houston, we have a problem.");
+            //}
+
+            //// foreach
+            //int[] numbers = new int[3] { 0, 1, 2 };// Array, different from a list, can't be resized (will be covered next week).
+            //foreach (int index in numbers)
+            //{
+            //    Console.WriteLine(index);
+            //}
+
+            //// While Loop
+            //int i = 0;
+            //while(i < 3)
+            //{
+            //    Console.WriteLine(i);
+            //    ++i;
+            //}
+
             //// float vs decimal
             //decimal accurate = 1.234567891234567M;
             //float notAccurate = 1.234567891234567f;
@@ -38,7 +66,7 @@ namespace TAFE_C__classActivities
             //int number1 = 42;
             //double number2 = 13.37;
             //string message = $"The answer is {number1}, this is {number2}!";
-            
+
             //// printing
             //Console.WriteLine(message);
         }

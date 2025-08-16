@@ -17,7 +17,7 @@ Etc..
 ## Exercise 5 - Debugging
 Debug this code to figure out what’s causing the code from compiling. HINT: There are FOUR issues. Copy it into VS inside your program.cs file.  
 ```cs
-myFuncton();
+myFunction();
 
 void myFunction()
 {
@@ -25,6 +25,10 @@ void myFunction()
     console.WriteLing(myInt);
 }
 ```
+1. `console.` -> `Console.`
+2. `.WriteLing` -> `.WriteLine`
+3. `//int myInt = 5` -> `int myInt = 5`
+4. `int myInt = 5` -> `int myInt = 5;`
 
 ## Your notes
 

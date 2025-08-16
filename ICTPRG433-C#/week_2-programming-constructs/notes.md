@@ -212,7 +212,8 @@ switch(myInt)
 }
 ```
 Switch statements can be nested, although it is not recommended.  
-`default:` can be placed anywhere in a switch statement, however the bottom is preferred (or the top, be consistent!) halfway through is not good.
+`default:` can be placed anywhere in a switch statement, however the bottom is preferred (or the top, be consistent!) halfway through is not good.  
+Break is used to exit each case in a switch statement, they are not needed for if statements.
 
 ___
 ## Resources
