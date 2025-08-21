@@ -1,0 +1,1 @@
+Clue 3: Look for the treasure in treasure.txt
