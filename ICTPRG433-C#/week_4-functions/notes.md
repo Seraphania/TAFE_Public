@@ -123,7 +123,7 @@ if(int.TryParse(Console.ReadLine(), out value))
 }
 ```
 
-Whats different and unique here is that we pass in the variable we are going to change. Typically value types like `int` copy the value into functions. This passes a reference to the variable and updates that particular instance of the int to be the result of the conversion. The keyword out is necessary for this to work.
+Whats different and unique here is that we pass in the variable we are going to change. Typically value types like `int` copy the value into functions. This passes a reference to the variable and updates that particular instance of the int to be the result of the conversion. The keyword `out` is necessary for this to work.
 
 ___
 ## Resources
