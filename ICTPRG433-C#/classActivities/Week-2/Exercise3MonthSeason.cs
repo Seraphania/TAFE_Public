@@ -1,8 +1,10 @@
-﻿namespace Week_2
+﻿using TAFE_C__classActivities;
+
+namespace Week_2
 {
-    class Exercise3MonthSeason
+    class Exercise3MonthSeason : IExercise
     {
-        public void Season()
+        public void Run()
         {
             Console.WriteLine("Please enter your the month you were born in: ");
             var month = Console.ReadLine()?.Trim().ToLower();

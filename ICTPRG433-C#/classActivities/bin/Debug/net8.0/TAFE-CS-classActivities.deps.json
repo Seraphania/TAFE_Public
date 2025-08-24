@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TAFE-CS-classActivities/1.0.0": {
+        "runtime": {
+          "TAFE-CS-classActivities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TAFE-CS-classActivities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

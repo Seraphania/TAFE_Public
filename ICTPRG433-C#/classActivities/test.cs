@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TAFE_C__classActivities
+﻿namespace TAFE_C__classActivities
 {
-    internal class Test
+    internal class Test : IExercise
     {
-        public static void Run()
+        public void Run()
         { // Put things here for testing!
 
 

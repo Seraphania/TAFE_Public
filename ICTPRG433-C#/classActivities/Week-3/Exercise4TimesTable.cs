@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TAFE_C__classActivities;
 
 namespace Week_3
 {
-    class Exercise4TimesTable
+    class Exercise4TimesTable : IExercise
     {
-        public void TimesTable()
-        // explain the program
-        // get an input
-        // check input is valid:
-        //  1. is it convertable to int? (if not get a new one)
-        //  2. is it between 1 and 12? (if not get a new one)
-        // using a valid input print the times table
+        public void Run()
         {
             int multiplicand;
 
@@ -38,8 +28,7 @@ namespace Week_3
                         userInput = Console.ReadLine()!.Trim();
                         isNumber = int.TryParse(userInput, out multiplicand);
                     }
-                }
-                ;
+                };
                 return;
             }
 

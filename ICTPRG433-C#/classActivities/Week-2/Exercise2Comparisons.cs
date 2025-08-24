@@ -1,6 +1,8 @@
-﻿namespace Week_2
+﻿using TAFE_C__classActivities;
+
+namespace Week_2
 {
-    class Exercise2Comparisons
+    class Exercise2Comparisons : IExercise
     {
         struct Students 
         {
@@ -11,7 +13,7 @@
             public int petCount;
             public string petType;
         };
-        public void Compare()
+        public void Run()
         {
             Students Student1;
             Students Student2;
