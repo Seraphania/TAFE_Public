@@ -3,6 +3,7 @@ using Week_1;
 using Week_2;
 using Week_3;
 using Week_4;
+using Week_5;
 
 namespace TAFE_C__classActivities
 {
@@ -28,7 +29,10 @@ namespace TAFE_C__classActivities
                 { "4.3", (new Exercise8ASimpleName(), "Return of the welcome message!") },
                 { "4.4", (new Exercise8BComplexComparison(), "Comparison of personal info but with input") },
                 { "4.5", (new Exercise9StringCheckForInt(), "Check if there is an int in a string") },
-                { "4.6", (new Exercise10ParametersReturn(), "The Calculator but better!") }
+                { "4.6", (new Exercise10ParametersReturn(), "The Calculator but better!") },
+                { "5.1", (new Exercise11PrintArray(), "Function to print arrays") },
+                { "5.2", (new Exercise12Print2Arrays(), "Print 2 arrays for student grades") },
+                { "5.3", (new Exercise13AverageInputs(), "Find the average of 5 user inputs") }
             };
 
             ShowMenu();

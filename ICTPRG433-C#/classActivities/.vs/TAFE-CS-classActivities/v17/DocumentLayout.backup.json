@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\VSDev\\TAFE\\ICTPRG433-C#\\classActivities\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B802E86-5437-4702-8259-77A3CA66E0D4}|TAFE-CS-classActivities.csproj|c:\\vsdev\\tafe\\ictprg433-c#\\classactivities\\week-2\\exercise3monthseason.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B802E86-5437-4702-8259-77A3CA66E0D4}|TAFE-CS-classActivities.csproj|solutionrelative:week-2\\exercise3monthseason.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B802E86-5437-4702-8259-77A3CA66E0D4}|TAFE-CS-classActivities.csproj|c:\\vsdev\\tafe\\ictprg433-c#\\classactivities\\week-5\\exercise13averageinputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B802E86-5437-4702-8259-77A3CA66E0D4}|TAFE-CS-classActivities.csproj|solutionrelative:week-5\\exercise13averageinputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6B802E86-5437-4702-8259-77A3CA66E0D4}|TAFE-CS-classActivities.csproj|c:\\vsdev\\tafe\\ictprg433-c#\\classactivities\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B802E86-5437-4702-8259-77A3CA66E0D4}|TAFE-CS-classActivities.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B802E86-5437-4702-8259-77A3CA66E0D4}|TAFE-CS-classActivities.csproj|c:\\vsdev\\tafe\\ictprg433-c#\\classactivities\\week-4\\exercise9stringcheckforint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B802E86-5437-4702-8259-77A3CA66E0D4}|TAFE-CS-classActivities.csproj|solutionrelative:week-4\\exercise9stringcheckforint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,25 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 12,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 12,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Exercise3MonthSeason.cs",
-              "DocumentMoniker": "C:\\VSDev\\TAFE\\ICTPRG433-C#\\classActivities\\Week-2\\Exercise3MonthSeason.cs",
-              "RelativeDocumentMoniker": "Week-2\\Exercise3MonthSeason.cs",
-              "ToolTip": "C:\\VSDev\\TAFE\\ICTPRG433-C#\\classActivities\\Week-2\\Exercise3MonthSeason.cs",
-              "RelativeToolTip": "Week-2\\Exercise3MonthSeason.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABVAAAAAAAAAA==",
+              "Title": "Exercise13AverageInputs.cs",
+              "DocumentMoniker": "C:\\VSDev\\TAFE\\ICTPRG433-C#\\classActivities\\Week-5\\Exercise13AverageInputs.cs",
+              "RelativeDocumentMoniker": "Week-5\\Exercise13AverageInputs.cs",
+              "ToolTip": "C:\\VSDev\\TAFE\\ICTPRG433-C#\\classActivities\\Week-5\\Exercise13AverageInputs.cs",
+              "RelativeToolTip": "Week-5\\Exercise13AverageInputs.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAgwBkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T12:42:35.69Z",
+              "WhenOpened": "2025-08-25T06:06:36.871Z",
               "EditorCaption": ""
             },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Exercise9StringCheckForInt.cs",
+              "DocumentMoniker": "C:\\VSDev\\TAFE\\ICTPRG433-C#\\classActivities\\Week-4\\Exercise9StringCheckForInt.cs",
+              "RelativeDocumentMoniker": "Week-4\\Exercise9StringCheckForInt.cs",
+              "ToolTip": "C:\\VSDev\\TAFE\\ICTPRG433-C#\\classActivities\\Week-4\\Exercise9StringCheckForInt.cs",
+              "RelativeToolTip": "Week-4\\Exercise9StringCheckForInt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T03:26:19.361Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 12,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -45,9 +74,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\VSDev\\TAFE\\ICTPRG433-C#\\classActivities\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T12:42:24.824Z",
+              "WhenOpened": "2025-08-25T03:25:29.867Z",
               "EditorCaption": ""
             }
           ]
