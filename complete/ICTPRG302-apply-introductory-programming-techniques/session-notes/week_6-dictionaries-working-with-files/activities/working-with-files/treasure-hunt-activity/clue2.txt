@@ -1,1 +1,0 @@
-Clue 2: Look for the next clue in clue3.txt
