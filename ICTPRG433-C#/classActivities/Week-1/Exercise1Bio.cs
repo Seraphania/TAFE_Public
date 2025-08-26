@@ -2,6 +2,7 @@
 
 namespace Week_1
 {
+    [Exercise(Title = "1", Description = "Personal bio exercise")]
     class Exercise1Bio : IExercise
     {
         public void Run()

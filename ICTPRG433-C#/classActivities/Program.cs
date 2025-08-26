@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 using Week_1;
 using Week_2;
 using Week_3;
@@ -11,29 +12,50 @@ namespace TAFE_C__classActivities
     {
         void Run();
     }
+    public class ExerciseAttribute : Attribute
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
-            var thingsToRun = new Dictionary<string, (IExercise Exercise, string DisplayName)>
-            {
-                { "test", (new Test(), "Run the current experiment") },
-                { "1", (new Exercise1Bio(), "Personal bio exercise") },
-                { "2.1", (new Exercise2Comparisons(), "Comparison of personal bios")},
-                { "2.2", (new Exercise3MonthSeason(), "Show season from birth month") },
-                { "3.1", (new Exercise4TimesTable(), "Print a times table") },
-                { "3.2", (new Exercise5Debugging(), "Debugging exercise") },
-                { "4.1", (new Exercise6DeclareFunction(), "Declaring and using functions") },
-                { "4.2", (new Exercise7Prarmeters(), "Simple addition or multiplication calculator") },
-                { "4.3", (new Exercise8ASimpleName(), "Return of the welcome message!") },
-                { "4.4", (new Exercise8BComplexComparison(), "Comparison of personal info but with input") },
-                { "4.5", (new Exercise9StringCheckForInt(), "Check if there is an int in a string") },
-                { "4.6", (new Exercise10ParametersReturn(), "The Calculator but better!") },
-                { "5.1", (new Exercise11PrintArray(), "Function to print arrays") },
-                { "5.2", (new Exercise12Print2Arrays(), "Print 2 arrays for student grades") },
-                { "5.3", (new Exercise13AverageInputs(), "Find the average of 5 user inputs") }
-            };
+            Type[] classes=typeof(IExercise).Assembly.GetTypes();
+            classes = Array.FindAll(classes, _class => _class.IsClass && _class.IsAssignableTo(typeof(IExercise)));
+
+            var thingsToRun = new Dictionary<string, (IExercise Exercise, string DisplayName)>();
+            Array.ForEach(classes, _class => {
+                ExerciseAttribute attrib = _class.GetCustomAttribute<ExerciseAttribute>();
+                string title = _class.Name;
+                string description = _class.Name;
+                if (attrib != null)
+                {
+                    title = attrib.Title;
+                    description = attrib.Description;
+                }
+                IExercise toRun = (IExercise)Activator.CreateInstance(_class);
+                thingsToRun.Add(title, (toRun, description));
+            });
+            //{
+                //{ "test", (new Test(), "Run the current experiment") },
+                //{ "1", (new Exercise1Bio(), "Personal bio exercise") },
+                //{ "2.1", (new Exercise2Comparisons(), "Comparison of personal bios")},
+                //{ "2.2", (new Exercise3MonthSeason(), "Show season from birth month") },
+                //{ "3.1", (new Exercise4TimesTable(), "Print a times table") },
+                //{ "3.2", (new Exercise5Debugging(), "Debugging exercise") },
+                //{ "4.1", (new Exercise6DeclareFunction(), "Declaring and using functions") },
+                //{ "4.2", (new Exercise7Prarmeters(), "Simple addition or multiplication calculator") },
+                //{ "4.3", (new Exercise8ASimpleName(), "Return of the welcome message!") },
+                //{ "4.4", (new Exercise8BComplexComparison(), "Comparison of personal info but with input") },
+                //{ "4.5", (new Exercise9StringCheckForInt(), "Check if there is an int in a string") },
+                //{ "4.6", (new Exercise10ParametersReturn(), "The Calculator but better!") },
+                //{ "5.1", (new Exercise11PrintArray(), "Function to print arrays") },
+                //{ "5.2", (new Exercise12Print2Arrays(), "Print 2 arrays for student grades") },
+                //{ "5.3", (new Exercise13AverageInputs(), "Find the average of 5 user inputs") }
+            //};
+
 
             ShowMenu();
             string userInput = ValidateInput(NormaliseInput(Console.ReadLine()!));

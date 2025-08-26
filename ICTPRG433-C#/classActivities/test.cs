@@ -1,5 +1,6 @@
 ﻿namespace TAFE_C__classActivities
 {
+    [ExerciseAttribute(Title="test", Description = "Run the current experiment")]
     internal class Test : IExercise
     {
         public void Run()

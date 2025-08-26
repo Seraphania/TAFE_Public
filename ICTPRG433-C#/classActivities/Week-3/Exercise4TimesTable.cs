@@ -2,6 +2,7 @@
 
 namespace Week_3
 {
+    [Exercise(Title = "3.1", Description = "Print a times table")]
     class Exercise4TimesTable : IExercise
     {
         public void Run()

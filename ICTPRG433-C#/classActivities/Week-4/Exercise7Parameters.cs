@@ -2,6 +2,7 @@
 
 namespace Week_4
 {
+    [Exercise(Title = "4.2", Description = "Simple addition or multiplication calculator")]
     internal class Exercise7Prarmeters : IExercise
     {
         public void Run()

@@ -11,6 +11,7 @@ namespace Week_4
                     string petType
                     );
 
+    [Exercise(Description = "Comparison of personal info but with input",Title = "4.4")]
     class Exercise8BComplexComparison : IExercise
     {
         public void Run() 

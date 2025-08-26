@@ -1,7 +1,9 @@
-﻿using TAFE_C__classActivities;
+﻿using System.Timers;
+using TAFE_C__classActivities;
 
 namespace Week_4
 {
+    [Exercise(Title = "4.3",Description = "Return of the welcome message!")]
     internal class Exercise8ASimpleName : IExercise
     {
         public void Run()
