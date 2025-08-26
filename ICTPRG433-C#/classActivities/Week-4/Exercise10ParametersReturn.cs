@@ -2,6 +2,7 @@
 
 namespace Week_4
 {
+    [Exercise(Title ="4.6",Description = "The Calculator but better!")]
     internal class Exercise10ParametersReturn : IExercise
     {
         public void Run()

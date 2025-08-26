@@ -2,6 +2,8 @@
 
 namespace Week_4
 {
+    [Exercise(Title = "4.5", Description = "Check if there is an int in a string")]
+
     internal class Exercise9StringCheckForInt : IExercise
     {
         public void Run()

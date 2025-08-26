@@ -2,6 +2,7 @@
 
 namespace Week_5
 {
+    [Exercise(Title = "5.1", Description = "Function to print arrays")]
     internal class Exercise11PrintArray : IExercise
     {
         public void Run()

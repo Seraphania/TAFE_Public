@@ -2,6 +2,7 @@
 
 namespace Week_5
 {
+    [Exercise(Title = "5.3", Description = "Find the average of 5 user inputs")]
     internal class Exercise13AverageInputs : IExercise
     {
         public void Run()

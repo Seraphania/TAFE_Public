@@ -2,6 +2,7 @@
 
 namespace Week_2
 {
+    [Exercise(Title = "2.2", Description = "Show season from birth month")]
     class Exercise3MonthSeason : IExercise
     {
         public void Run()

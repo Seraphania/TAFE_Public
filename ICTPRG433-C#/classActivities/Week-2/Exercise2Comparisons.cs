@@ -2,6 +2,7 @@
 
 namespace Week_2
 {
+    [Exercise(Title = "2.1", Description = "Comparison of personal bios")]
     class Exercise2Comparisons : IExercise
     {
         struct Students 
