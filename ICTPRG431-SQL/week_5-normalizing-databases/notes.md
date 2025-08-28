@@ -1,17 +1,18 @@
 # Contents
 - [Contents](#contents)
 - [Week 5/Session 5 - Database Normalisation](#week-5session-5---database-normalisation)
-  - [Overview](#overview)
-  - [Gathering Data](#gathering-data)
-  - [Anomalies](#anomalies)
-  - [Normalising Databases](#normalising-databases)
-    - [First Normal Form (1NF)](#first-normal-form-1nf)
-    - [Second Normal Form (2NF)](#second-normal-form-2nf)
-    - [Third Normal Form (3NF)](#third-normal-form-3nf)
-    - [Caveat](#caveat)
-  - [Entity digrams](#entity-digrams)
-  - [Resources](#resources)
-  - [Activities](#activities)
+	- [Overview](#overview)
+	- [Gathering Data](#gathering-data)
+	- [Anomalies](#anomalies)
+	- [Normalising Databases](#normalising-databases)
+		- [First Normal Form (1NF)](#first-normal-form-1nf)
+		- [Second Normal Form (2NF)](#second-normal-form-2nf)
+		- [Third Normal Form (3NF)](#third-normal-form-3nf)
+		- [Caveat](#caveat)
+		- [Example Code from Para](#example-code-from-para)
+	- [Entity digrams](#entity-digrams)
+	- [Resources](#resources)
+	- [Activities](#activities)
 
 # Week 5/Session 5 - Database Normalisation
 20/8/2025  
@@ -65,6 +66,68 @@ Although it is ideal, it is not always possible or practical to have a fully 3NF
 
 It should also be pointed out that the higher the normal form, the more acceptable it is not to abide by it. There are a good few databases that aren’t 3NF, very few that aren’t 2NF and databases that are not 1NF should basically never happen.
 
+### Example Code from Para
+```sql
+DROP DATABASE tafe;
+CREATE DATABASE tafe;
+
+USE tafe;
+
+CREATE TABLE if NOT EXISTS students (
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+	student_number VARCHAR(255),
+	first_name VARCHAR(255),
+	last_name VARCHAR(255),
+	address VARCHAR(255));
+
+CREATE TABLE if NOT EXISTS classes (
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+	`name` VARCHAR(255),
+	`code` VARCHAR(255));
+
+CREATE TABLE if NOT EXISTS enrolments (
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+	class_id BIGINT NOT null,
+	student_id BIGINT NOT NULL,
+	FOREIGN KEY(class_id) REFERENCES classes(id),
+	FOREIGN KEY(student_id) REFERENCES students(id));
+
+DESCRIBE students;
+DESCRIBE classes;
+DESCRIBE enrolments;
+
+INSERT INTO students 
+	(student_number, first_name, last_name, address)
+
+VALUES
+	('J123', 'Mila', 'Maxwell', 'The plain of spirits'),
+	('2032', 'Jude', 'Mathis', 'Fennmont'),
+	('0123', 'Lloyd','Irving', 'Iselia');
+
+INSERT INTO classes
+ (`name`, `code`)
+
+VALUES
+	('Version Control and Object Oriented', 'RIoT'),
+	('Data Driven Applications', 'DDA');
+
+SELECT * FROM students;
+SELECT * FROM classes;
+
+INSERT INTO enrolments
+	(student_id, class_id)
+
+VALUES
+	(1,1),
+	(1,2),
+	(2,1),
+	(3,1);
+
+SELECT * FROM students;
+SELECT * FROM classes;
+SELECT * FROM enrolments;
+```
+
 ## Entity digrams
 https://app.diagrams.net/
 
@@ -76,9 +139,3 @@ ___
 
 ## Activities
 [In-class activity](./activities/class-activities.md)  
-
-Questions for Para:
-* What should we have covered
-* Have we covered "describing tables"
-* Week 4 activities - create the databases or just describe them?
-* psql connecting to DB's?

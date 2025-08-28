@@ -1,6 +1,7 @@
-CREATE DATABASE test; -- PostgreSQL  this has to be done seperately, then manually connect to the new DB.
+CREATE DATABASE IF NOT EXISTS test; -- PostgreSQL  this has to be done seperately, then manually connect to the new DB.
+USE test;
 
-CREATE TABLE customers (
+CREATE TABLE IF NOT EXISTS customers (
 	given_name VARCHAR(255),
 	family_name VARCHAR(255),
 	address VARCHAR(255),
@@ -9,7 +10,7 @@ CREATE TABLE customers (
 
 
 INSERT INTO customers (given_name, family_name, address, age, gender) VALUES 
-	('Jaques', 'd''Carre', '123, Some Street, Waterdale, 1235', 43, 'M')
+	('Jaques', 'd''Carre', '123, Some Street, Waterdale, 1235', 43, 'M');
 
 INSERT INTO customers (given_name, family_name, address, age, gender) VALUES
    ('Wander', 'Along', '1 Short Lane, Bigtown, 1235', 23,'M'),  

@@ -34,6 +34,31 @@ The database in the program is set up as follows:
 * Stock
 
 ## Notes
+Customer Table:
+* Customer ID 
+* First name 
+* Surname 
+* Date of birth 
+* Phone number 
+* Address 
+* Discount (2% for silver, 5% for gold, 10% for platinum)
+
+Order Table:
+* Customer (a reference to the customer object representing the customer that made the order) 
+* Products (an array of products that make up the order)
+* Date of order 
+
+Products Table:
+* Product ID 
+* Name 
+* Company 
+* Price 
+* Stock
+
+Age can be extrapolated from DoB.  
+Orders Table is a join table.  
+Keep either loyalty or discount, not both.
+
 
 ## Tips
 
