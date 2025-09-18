@@ -61,8 +61,6 @@ Relational databases use foreign keys to express relationships between tables. `
 
 *NOTE:* Often tables will have the same names for columns, for example `id`. dot notation is used to distinguish which tables "id" column is being referred to, for example `Gallery.id` or `Artwork.id`.
 
-
-
 ### Inner Join
 The default type of join is an inner join, It returns rows where there is a match in both tables.  
 At it's most basic, the syntax for joins is:
@@ -72,17 +70,12 @@ FROM table_a
 JOIN table_b 
   ON table_b.foreign_key=table_a.primary_key
 ```
+*`JOIN`/`INNER JOIN` are the same thing, it is best to be explicit and use `INNER JOIN`.*
 
 Using the Gallery and Artwork example from previous sessions:
 ```mermaid
----
-config:
-  layout: dagre
-  theme: redux-dark
-  look: classic
----
 erDiagram
-	direction LR
+  direction LR
 Gallery {
         string id PK
         string name
@@ -96,7 +89,7 @@ Artwork {
         money worth
     }
 
-	Gallery ||--|{ Artwork :"  "
+  Gallery ||--|{ Artwork :"  "
 ```
 
 ```sql
@@ -106,13 +99,14 @@ JOIN Gallery
   ON Gallery.id = Artwork.gallery_id;
 ```
 Breakdown:
-* `SELECT Gallery.name, Artwork.name FROM Artwork` - Select Specific Columns from both tables
-* `FROM Artwork JOIN Gallery` - defines the two tables to be joined.
+* `SELECT Gallery.name, Artwork.name` - Select Specific Columns from both tables
+* `FROM Artwork`
+* `JOIN Gallery` - defines the two tables to be joined.
 * `ON Gallery.id = Artwork.gallery_id;` defines the relationship between the tables.
 
 This will only return artworks that have a corresponding gallery.
 
-Note that when using inner joins the table order doesn't matter. 
+**Note that when using inner joins the table order doesn't matter.**
 
 ### Left/Right Join
 These are outer joins and they return unmatched rows from one side of the join.
@@ -125,16 +119,17 @@ FROM Artwork
 LEFT JOIN Gallery 
   ON Gallery.ID = Artwork.GalleryID;
 ```
+This returns the names of all artworks and the name of the gallery they are in (or null if they aren't in a gallery)
+
 **Right Join:**  
-Returns all records from the right table, and matched records from the left table. 
+Returns all records from the right table (the one after ), and matched records from the left table. 
 ```sql
 SELECT Gallery.Name, Artwork.Name 
 FROM Artwork 
 RIGHT JOIN Gallery 
   ON Gallery.ID = Artwork.GalleryID;
 ```
-This achieves the same result as the LEFT JOIN above, but swaps the table order.
-Unlike joins/inner joins, the table order matters with left/right joins.
+This returns the names of all galleries and the names of all artworks they contain (or null if they have no arts)
 
 ## UNION
 `UNION` is used to combine the results of two or more `SELECT` statements into a single result set.
@@ -177,10 +172,7 @@ Will return:
 
 *Note that Duplicates are removed*
 
-
 ### UNION ALL
-
-
 
 The `UNION ALL` operator selects rows from two or more tables similar to `UNION`. However, unlike UNION, UNION ALL doesn't ignore duplicate rows.
 ```sql

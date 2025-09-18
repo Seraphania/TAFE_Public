@@ -183,3 +183,7 @@ SELECT * FROM students
 
 SELECT * FROM classes WHERE name LIKE "%DATA%";
 
+SELECT s.first_name, s.last_name, e.class_id 
+FROM students s
+LEFT JOIN enrolments e 
+ON e.student_id = s.id;
